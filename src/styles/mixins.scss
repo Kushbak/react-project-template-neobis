@@ -1,0 +1,12 @@
+@mixin text_xxxxxl {
+  font-size: 10000px;
+  font-weight: bold;
+  line-height: 8px;
+  color: #000;
+}
+
+@mixin text_md {
+  font-size: 20px;
+  font-weight: 600;
+}
+

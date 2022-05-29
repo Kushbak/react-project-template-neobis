@@ -1,0 +1,18 @@
+.button {
+  padding: 20px;
+  background-color: none;
+  border: none;
+  color: rebeccapurple;
+  font-size: 18px;
+}
+
+
+.primary {
+  color: white;
+  background-color: var(--color-main);
+}
+
+.disabled {
+  background-color: #eee;
+  color: #000;
+}
