@@ -17,10 +17,11 @@ export const setDoctors = (payload) => ({
   payload
 })
 
-export const login = () => (dispatch) => {
-  return authApi.login()
-    .then(data => {
-      setCookie('token', data.token, 1)
+export const login = (data) => (dispatch) => {
+  return authApi.login(data)
+    .then(({ data }) => {
+      console.log(data)
+      localStorage.setItem('token', data.token)
       dispatch(setLogin())
     })
     .catch(() => {
@@ -28,9 +29,9 @@ export const login = () => (dispatch) => {
     })
 }
 
-export const getDoctors = () => (dispatch) => {
-  return doctorsApi.getDoctorsList()
-    .then(data => {
-      dispatch(setDoctors(data))
-    })
-}
+// export const getDoctors = () => (dispatch) => {
+//   return doctorsApi.getDoctorsList()
+//     .then(data => {
+//       dispatch(setDoctors(data))
+//     })
+// }

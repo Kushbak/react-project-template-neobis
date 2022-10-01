@@ -2,7 +2,7 @@ import axios from 'axios'
 import { doctorsList } from './mock/doctorsMock'
 
 const instance = axios.create({
-  baseURL: 'kljnuvlgaiwerjnglawjrneflawkjrenfvlawrkjnv.com/',
+  baseURL: 'https://testrepobackend.herokuapp.com/',
   headers: {
     ContentType: 'application/json',
   }
@@ -11,8 +11,8 @@ const instance = axios.create({
 
 
 export const authApi = {
-  login: () => {
-    return Promise.resolve({token: 'o3EFUHQOM498VTQNO48HVOQ48FHNKARU'})
+  login: (data) => {
+    return instance.post('authenticate/login/', data)
   }
 }
 
